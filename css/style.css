@@ -551,7 +551,7 @@ button {
 
 .checklist-items li {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 14px;
   font-size: 16px;
   color: var(--color-text-muted);
@@ -565,7 +565,11 @@ button {
   font-size: 20px;
   color: var(--color-text-main);
   flex-shrink: 0;
-  margin-top: -2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
   line-height: 1;
 }
 
