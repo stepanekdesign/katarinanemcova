@@ -496,6 +496,15 @@ button {
   align-items: start;
 }
 
+.intro-content-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.intro-content-left .section-title {
+  margin-bottom: 28px;
+}
+
 .intro-content-text {
   font-size: 16px;
   color: var(--color-text-muted);
@@ -1096,6 +1105,10 @@ button {
   .section-intro-content {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+
+  .intro-content-left .section-title {
+    margin-bottom: 24px;
   }
 }
 
