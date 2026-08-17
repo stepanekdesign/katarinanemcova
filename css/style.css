@@ -240,7 +240,7 @@ button {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 32px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -801,10 +801,32 @@ button {
   margin-top: 48px;
 }
 
+.case-study-content {
+  order: -1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.case-study-content h3 {
+  font-size: clamp(18px, 2.5vw, 22px);
+  font-weight: 600;
+  color: var(--color-text-main);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.case-study-content p {
+  font-size: 16px;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
 .case-study-image-frame {
   border: 1px solid var(--color-border);
   height: 100%;
-  min-height: 420px;
+  min-height: 520px;
   overflow: hidden;
 }
 
