@@ -477,6 +477,91 @@ button {
   line-height: 1.6;
 }
 
+/* Section: Co Nabízím - Introductory Content */
+.section-intro-h3 {
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 400;
+  color: var(--color-text-main);
+  line-height: 1.4;
+  margin-bottom: 48px;
+  margin-top: 8px;
+  max-width: 640px;
+}
+
+.section-intro-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+  align-items: start;
+}
+
+.intro-content-text {
+  font-size: 16px;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+.intro-content-text strong {
+  color: var(--color-text-main);
+  font-weight: 600;
+}
+
+.checklist-card {
+  background: white;
+  border: 1px solid var(--color-border);
+  padding: 36px 32px;
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+}
+
+.checklist-card:hover {
+  border-color: var(--color-text-main);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.04);
+}
+
+.checklist-card h3 {
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-weight: 600;
+  color: var(--color-text-main);
+  line-height: 1.4;
+  margin-bottom: 28px;
+}
+
+.checklist-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+.checklist-items li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  padding-left: 0;
+}
+
+.checklist-items li::before {
+  content: '✓';
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--color-text-main);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Hide the highlight cards grid below */
+.highlights-grid {
+  display: none !important;
+}
+
 /* Section: Rozsah Analýzy a Ceny (3 Breakdown Cards) */
 .pricing-grid {
   display: grid;
@@ -1006,6 +1091,11 @@ button {
 
   .about-photo-wrapper {
     height: 380px;
+  }
+
+  .section-intro-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
 }
 
