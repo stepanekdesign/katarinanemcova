@@ -105,20 +105,6 @@ button {
 }
 
 /* Badge / Label */
-.section-badge {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-  margin-bottom: 14px;
-}
-
-.section-badge-dark {
-  color: var(--color-text-muted-dark);
-}
-
 .section-title {
   font-size: clamp(28px, 4vw, 40px);
   font-weight: 600;
@@ -194,13 +180,25 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  width: 14px;
+  height: 14px;
   transition: transform var(--transition-fast);
 }
 
+.btn-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.btn-primary .btn-icon img,
+.btn-outline-white .btn-icon img {
+  filter: brightness(0) invert(1);
+}
+
 .btn:hover .btn-icon {
-  transform: translateX(4px);
+  transform: translate(3px, -3px);
 }
 
 /* Navigation Bar */
@@ -551,7 +549,7 @@ button {
 
 .checklist-items li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 14px;
   font-size: 16px;
   color: var(--color-text-muted);
@@ -560,17 +558,23 @@ button {
 }
 
 .checklist-items li::before {
-  content: '✓';
-  font-weight: 800;
-  font-size: 20px;
-  color: var(--color-text-main);
+  content: '';
+  width: 14px;
+  height: 14px;
   flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  line-height: 1;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 5px;
+}
+
+.checklist-items li:nth-child(odd)::before {
+  background-image: url('../assets/icons/up-simple-black.svg');
+}
+
+.checklist-items li:nth-child(even)::before {
+  background-image: url('../assets/icons/down-simple-black.svg');
 }
 
 /* Hide the highlight cards grid below */
@@ -579,6 +583,37 @@ button {
 }
 
 /* Section: Rozsah Analýzy a Ceny (3 Breakdown Cards) */
+#ceny {
+  position: relative;
+  overflow: hidden;
+}
+
+#ceny .container {
+  position: relative;
+  z-index: 1;
+}
+
+.pricing-pattern-bg {
+  position: absolute;
+  bottom: -80px;
+  right: -140px;
+  width: 720px;
+  max-width: none;
+  height: auto;
+  pointer-events: none;
+  opacity: 0.75;
+  z-index: 0;
+}
+
+@media (max-width: 992px) {
+  .pricing-pattern-bg {
+    width: 450px;
+    right: -100px;
+    bottom: -50px;
+    opacity: 0.6;
+  }
+}
+
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -820,8 +855,12 @@ button {
   justify-content: center;
 }
 
-.case-study-left-col .section-badge {
-  margin-bottom: 14px;
+.case-study-symbol-icon {
+  height: clamp(21px, 3vw, 27px);
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 18px;
+  align-self: flex-start;
 }
 
 .case-study-left-col .section-title {
@@ -843,6 +882,19 @@ button {
   margin-bottom: 12px;
 }
 
+.result-h3 {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.result-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
 .case-study-body h3:first-of-type {
   margin-top: 0;
 }
@@ -852,6 +904,11 @@ button {
   color: var(--color-text-muted);
   line-height: 1.7;
   margin: 0 0 20px 0;
+}
+
+.case-study-body strong {
+  color: var(--color-text-main);
+  font-weight: 600;
 }
 
 .case-study-body p:last-child {
@@ -907,6 +964,37 @@ button {
 }
 
 /* Section: Moje Odbornost (About me) */
+#o-mne {
+  position: relative;
+  overflow: hidden;
+}
+
+#o-mne .container {
+  position: relative;
+  z-index: 1;
+}
+
+.about-pattern-bg {
+  position: absolute;
+  bottom: -80px;
+  left: -140px;
+  width: 720px;
+  max-width: none;
+  height: auto;
+  pointer-events: none;
+  opacity: 0.75;
+  z-index: 0;
+}
+
+@media (max-width: 992px) {
+  .about-pattern-bg {
+    width: 450px;
+    left: -100px;
+    bottom: -50px;
+    opacity: 0.6;
+  }
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: 400px 1fr;
@@ -990,10 +1078,43 @@ button {
 
 /* Section: Contact & Footer */
 .contact-section {
+  position: relative;
+  overflow: hidden;
   padding: 96px 0 64px;
   background-color: var(--color-bg-dark);
   color: var(--color-text-on-dark);
   border-top: 1px solid var(--color-border-dark);
+}
+
+.contact-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-pattern-bg {
+  position: absolute;
+  top: -60px;
+  right: -80px;
+  width: 650px;
+  height: auto;
+  pointer-events: none;
+  filter: brightness(0) invert(1);
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.contact-title-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact-title-icon {
+  height: clamp(26px, 3.5vw, 34px);
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  flex-shrink: 0;
 }
 
 .contact-grid {
@@ -1008,6 +1129,12 @@ button {
   flex-direction: column;
   gap: 24px;
   margin-top: 32px;
+}
+
+.contact-primary-items {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
 }
 
 .contact-item {
@@ -1032,6 +1159,19 @@ button {
 
 .contact-value a:hover {
   text-decoration: underline;
+}
+
+.contact-linkedin-item .contact-value a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-linkedin-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  filter: invert(1);
 }
 
 .contact-action-box {
@@ -1118,6 +1258,10 @@ button {
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+
+  .contact-primary-items {
+    grid-template-columns: 1fr;
   }
 
   .hero-content {
