@@ -559,7 +559,7 @@ button {
 
 .checklist-items li::before {
   content: '';
-  width: 14px;
+  width: 25.5px;
   height: 14px;
   flex-shrink: 0;
   display: inline-block;
@@ -569,12 +569,17 @@ button {
   margin-top: 5px;
 }
 
-.checklist-items li:nth-child(odd)::before {
-  background-image: url('../assets/icons/up-simple-black.svg');
+.checklist-items li:nth-child(1)::before,
+.checklist-items li:nth-child(3)::before,
+.checklist-items li:nth-child(5)::before,
+.checklist-items li:nth-child(6)::before {
+  background-image: url('../assets/icons/up-25k.svg');
 }
 
-.checklist-items li:nth-child(even)::before {
-  background-image: url('../assets/icons/down-simple-black.svg');
+.checklist-items li:nth-child(2)::before,
+.checklist-items li:nth-child(4)::before,
+.checklist-items li:nth-child(7)::before {
+  background-image: url('../assets/icons/down-25k.svg');
 }
 
 /* Hide the highlight cards grid below */
@@ -624,7 +629,7 @@ button {
 .pricing-card {
   background: white;
   border: 1px solid var(--color-border);
-  padding: 40px 32px;
+  padding: 40px 24px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -643,7 +648,7 @@ button {
   content: 'NEJŽÁDANĚJŠÍ';
   position: absolute;
   top: -14px;
-  left: 32px;
+  left: 24px;
   background: var(--color-bg-dark);
   color: white;
   font-size: 11px;
@@ -662,10 +667,12 @@ button {
 }
 
 .pricing-title {
-  font-size: 22px;
+  font-size: 20px;
+  line-height: 1.35;
   font-weight: 600;
   color: var(--color-text-main);
   margin-bottom: 12px;
+  min-height: 56px;
 }
 
 .pricing-desc {
@@ -676,11 +683,11 @@ button {
 }
 
 .pricing-price {
-  font-size: 26px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 400;
   color: var(--color-text-main);
-  padding-bottom: 24px;
-  margin-bottom: 24px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
   border-bottom: 1px solid var(--color-border);
 }
 
