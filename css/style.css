@@ -298,6 +298,18 @@ button {
   margin: 2px 0;
 }
 
+.mobile-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.mobile-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
 /* Mobile Drawer Menu */
 .mobile-drawer {
   position: fixed;
@@ -322,6 +334,13 @@ button {
 .mobile-drawer .nav-link {
   font-size: 16px;
   padding: 8px 0;
+}
+
+.mobile-drawer .header-phone {
+  display: inline-flex !important;
+  border-top: 1px solid var(--color-border);
+  padding-top: 16px;
+  margin-top: 8px;
 }
 
 /* Hero Section */
@@ -1308,12 +1327,13 @@ button {
   }
 
   .nav-links,
-  .nav-actions {
-    display: none;
+  .nav-actions,
+  .navbar .header-phone {
+    display: none !important;
   }
 
   .mobile-toggle {
-    display: flex;
+    display: flex !important;
   }
 
   .about-photo-wrapper {
