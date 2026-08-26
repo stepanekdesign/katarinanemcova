@@ -589,15 +589,18 @@ button {
 }
 
 .checklist-items li:nth-child(1)::before,
-.checklist-items li:nth-child(3)::before,
 .checklist-items li:nth-child(5)::before,
-.checklist-items li:nth-child(6)::before {
+.checklist-items li:nth-child(7)::before {
   background-image: url('../assets/icons/up-25k.svg');
 }
 
-.checklist-items li:nth-child(2)::before,
+.checklist-items li:nth-child(2)::before {
+  background-image: url('../assets/icons/symbol-black.svg');
+}
+
+.checklist-items li:nth-child(3)::before,
 .checklist-items li:nth-child(4)::before,
-.checklist-items li:nth-child(7)::before {
+.checklist-items li:nth-child(6)::before {
   background-image: url('../assets/icons/down-25k.svg');
 }
 
@@ -1139,7 +1142,6 @@ button {
   height: clamp(26px, 3.5vw, 34px);
   width: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1);
   flex-shrink: 0;
 }
 
