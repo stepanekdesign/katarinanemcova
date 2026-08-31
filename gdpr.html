@@ -1,18 +1,61 @@
 <!DOCTYPE html>
 <html lang="cs">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ochrana osobních údajů (GDPR) | Ing. arch. Katarína Němcová</title>
   <meta name="description" content="Informace o zpracování a ochraně osobních údajů v souladu s nařízením GDPR.">
-  
-    <!-- CSS Stylesheet -->
+
+  <!-- International SEO & Canonicals -->
+  <link rel="canonical" href="https://www.katarinanemcova.cz/gdpr.html">
+  <link rel="alternate" hreflang="cs" href="https://www.katarinanemcova.cz/gdpr.html">
+  <link rel="alternate" hreflang="en" href="https://www.katarinanemcova.cz/en/gdpr.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.katarinanemcova.cz/en/gdpr.html">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.katarinanemcova.cz/gdpr.html">
+  <meta property="og:title" content="Ochrana osobních údajů (GDPR) | Ing. arch. Katarína Němcová">
+  <meta property="og:description" content="Informace o zpracování a ochraně osobních údajů v souladu s nařízením GDPR.">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image" content="https://www.katarinanemcova.cz/assets/images/kn-about-me.jpg">
+
+  <!-- Early Language Detection & Redirection -->
+  <script>
+    (function () {
+      var pref = null;
+      try { pref = localStorage.getItem('preferred_lang'); } catch (e) { }
+      if (pref === 'en') {
+        window.location.replace('en/gdpr.html' + window.location.hash);
+        return;
+      }
+      if (!pref) {
+        var userLangs = navigator.languages || [navigator.language || ''];
+        var isCzech = false;
+        for (var i = 0; i < userLangs.length; i++) {
+          var lang = (userLangs[i] || '').toLowerCase();
+          if (lang.indexOf('cs') === 0) {
+            isCzech = true;
+            break;
+          }
+        }
+        if (!isCzech) {
+          window.location.replace('en/gdpr.html' + window.location.hash);
+        }
+      }
+    })();
+  </script>
+
+  <!-- CSS Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/icons/symbol-black.svg">
   <link rel="shortcut icon" href="assets/icons/symbol-black.svg">
 </head>
+
 <body>
 
   <!-- Sticky Navbar -->
@@ -22,10 +65,20 @@
         <img src="assets/images/logo-full-color.svg" alt="Ing. arch. Katarína Němcová Logo">
       </a>
 
-      <div class="nav-actions">
+      <div class="nav-actions" style="display: flex; align-items: center; gap: 16px;">
         <a href="index.html" class="btn btn-secondary">
           ← Zpět na hlavní stránku
         </a>
+
+        <div class="lang-dropdown">
+          <select class="lang-select" aria-label="Výběr jazyka / Language selection">
+            <option value="cs" selected>CZ</option>
+            <option value="en">EN</option>
+          </select>
+          <svg class="lang-dropdown-icon" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L4 4L7 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="square" />
+          </svg>
+        </div>
       </div>
     </div>
   </header>
@@ -94,5 +147,6 @@
     </div>
   </footer>
 
+  <script src="js/main.js"></script>
 </body>
 </html>

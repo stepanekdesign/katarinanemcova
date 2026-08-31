@@ -85,4 +85,36 @@ document.addEventListener('DOMContentLoaded', () => {
       servicesGrid.scrollBy({ left: 260, behavior: 'smooth' });
     });
   }
+
+  // Language Switcher Logic
+  const langSelects = document.querySelectorAll('.lang-select');
+  langSelects.forEach(select => {
+    select.addEventListener('change', (e) => {
+      window.switchLanguage(e.target.value);
+    });
+  });
 });
+
+/**
+ * Switch website language between Czech and English
+ * @param {string} targetLang - 'cs' | 'en'
+ */
+window.switchLanguage = function (targetLang) {
+  try {
+    localStorage.setItem('preferred_lang', targetLang);
+  } catch (e) {
+    console.warn('localStorage is not available', e);
+  }
+
+  const isEn = window.location.pathname.includes('/en/') || window.location.pathname.endsWith('/en');
+  const isGdpr = window.location.pathname.includes('gdpr.html');
+
+  if (targetLang === 'en' && !isEn) {
+    const targetUrl = isGdpr ? 'en/gdpr.html' : 'en/index.html' + window.location.hash;
+    window.location.href = targetUrl;
+  } else if (targetLang === 'cs' && isEn) {
+    const targetUrl = isGdpr ? '../gdpr.html' : '../index.html' + window.location.hash;
+    window.location.href = targetUrl;
+  }
+};
+
