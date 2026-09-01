@@ -8,6 +8,55 @@
   <meta name="description"
     content="Odemykám skutečný potenciál nemovitostí. Architektonická prověrka, technické zhodnocení a návrh optimalizace pro kupující, majitele i investory.">
 
+  <!-- International SEO & Canonicals -->
+  <link rel="canonical" href="https://www.katarinanemcova.cz/">
+  <link rel="alternate" hreflang="cs" href="https://www.katarinanemcova.cz/">
+  <link rel="alternate" hreflang="en" href="https://www.katarinanemcova.cz/en/">
+  <link rel="alternate" hreflang="x-default" href="https://www.katarinanemcova.cz/en/">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.katarinanemcova.cz/">
+  <meta property="og:title" content="Ing. arch. Katarína Němcová | Nezávislá analýza investičního a technického potenciálu nemovitostí">
+  <meta property="og:description" content="Odemykám skutečný potenciál nemovitostí. Architektonická prověrka, technické zhodnocení a návrh optimalizace pro kupující, majitele i investory.">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image" content="https://www.katarinanemcova.cz/assets/images/kn-about-me.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ing. arch. Katarína Němcová | Nezávislá analýza investičního a technického potenciálu nemovitostí">
+  <meta name="twitter:description" content="Odemykám skutečný potenciál nemovitostí. Architektonická prověrka, technické zhodnocení a návrh optimalizace pro kupující, majitele i investory.">
+  <meta name="twitter:image" content="https://www.katarinanemcova.cz/assets/images/kn-about-me.jpg">
+
+  <!-- Early Language Detection & Redirection -->
+  <script>
+    (function () {
+      var pref = null;
+      try { pref = localStorage.getItem('preferred_lang'); } catch (e) { }
+      if (pref === 'en') {
+        var isGdpr = window.location.pathname.indexOf('gdpr.html') !== -1;
+        window.location.replace((isGdpr ? 'en/gdpr.html' : 'en/index.html') + window.location.hash);
+        return;
+      }
+      if (!pref) {
+        var userLangs = navigator.languages || [navigator.language || ''];
+        var isCzech = false;
+        for (var i = 0; i < userLangs.length; i++) {
+          var lang = (userLangs[i] || '').toLowerCase();
+          if (lang.indexOf('cs') === 0) {
+            isCzech = true;
+            break;
+          }
+        }
+        if (!isCzech) {
+          var isGdpr = window.location.pathname.indexOf('gdpr.html') !== -1;
+          window.location.replace((isGdpr ? 'en/gdpr.html' : 'en/index.html') + window.location.hash);
+        }
+      }
+    })();
+  </script>
+
   <!-- CSS Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 
@@ -36,13 +85,25 @@
         </ul>
       </nav>
 
-      <a href="tel:+420776522613" class="header-phone">
-        <svg class="header-phone-icon" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-        </svg>
-        +420 776 522 613
-      </a>
+      <div class="navbar-right">
+        <a href="tel:+420776522613" class="header-phone">
+          <svg class="header-phone-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+          </svg>
+          +420 776 522 613
+        </a>
+
+        <div class="lang-dropdown">
+          <select class="lang-select" aria-label="Výběr jazyka / Language selection">
+            <option value="cs" selected>CZ</option>
+            <option value="en">EN</option>
+          </select>
+          <svg class="lang-dropdown-icon" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L4 4L7 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="square" />
+          </svg>
+        </div>
+      </div>
 
       <!-- Mobile Hamburger Button -->
       <button class="mobile-toggle" id="mobile-toggle" aria-label="Otevřít menu" aria-expanded="false">
@@ -61,14 +122,28 @@
     <a href="#pripad-z-praxe" class="nav-link">Příběh z praxe</a>
     <a href="#o-mne" class="nav-link">Odbornost</a>
     <a href="#sluzby" class="nav-link">Navazující služby</a>
-    <a href="tel:+420776522613" class="header-phone" style="margin-top: 12px; font-size: 16px;">
+
+    <div class="mobile-lang-row">
+      <span class="mobile-lang-label">Jazyk / Language</span>
+      <div class="lang-dropdown">
+        <select class="lang-select" aria-label="Výběr jazyka / Language selection">
+          <option value="cs" selected>Čeština (CZ)</option>
+          <option value="en">English (EN)</option>
+        </select>
+        <svg class="lang-dropdown-icon" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1L4 4L7 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="square" />
+        </svg>
+      </div>
+    </div>
+
+    <a href="tel:+420776522613" class="header-phone" style="font-size: 16px;">
       <svg class="header-phone-icon" viewBox="0 0 24 24" fill="currentColor" style="width: 16px; height: 16px;">
         <path
           d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
       </svg>
       +420 776 522 613
     </a>
-    <a href="#kontakt" class="btn btn-primary" style="margin-top: 8px; width: 100%;">
+    <a href="#kontakt" class="btn btn-primary" style="margin-top: 4px; width: 100%;">
       Domluvit úvodní hovor
       <span class="btn-icon">
         <img src="assets/icons/up-simple-black.svg" alt="" aria-hidden="true">

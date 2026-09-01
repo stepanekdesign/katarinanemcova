@@ -237,7 +237,7 @@ button {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 24px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -253,6 +253,82 @@ button {
 .nav-link:hover,
 .nav-link.active {
   color: var(--color-text-main);
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Language Dropdown Selector */
+.lang-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.lang-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  padding: 6px 26px 6px 10px;
+  font-family: var(--font-family);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-text-main);
+  cursor: pointer;
+  outline: none;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+  line-height: 1;
+  height: 34px;
+}
+
+.lang-select:hover,
+.lang-select:focus {
+  border-color: var(--color-accent);
+  background-color: var(--color-bg-secondary);
+}
+
+.lang-select option {
+  background: white;
+  color: var(--color-text-main);
+  font-family: var(--font-family);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 4px;
+}
+
+.lang-dropdown-icon {
+  position: absolute;
+  right: 9px;
+  width: 8px;
+  height: 5px;
+  pointer-events: none;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.lang-dropdown:hover .lang-dropdown-icon {
+  color: var(--color-text-main);
+}
+
+.mobile-lang-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--color-border);
+  padding-top: 16px;
+  margin-top: 4px;
+}
+
+.mobile-lang-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-muted);
 }
 
 .header-phone {
@@ -615,7 +691,8 @@ button {
   overflow: hidden;
 }
 
-#ceny .container {
+#ceny .container,
+#pricing .container {
   position: relative;
   z-index: 1;
 }
@@ -998,7 +1075,8 @@ button {
   overflow: hidden;
 }
 
-#o-mne .container {
+#o-mne .container,
+#expertise .container {
   position: relative;
   z-index: 1;
 }
@@ -1330,6 +1408,7 @@ button {
 
   .nav-links,
   .nav-actions,
+  .navbar-right,
   .navbar .header-phone {
     display: none !important;
   }
